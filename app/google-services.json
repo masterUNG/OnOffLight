@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "846186588162",
+    "firebase_url": "https://onofflight-32bd7.firebaseio.com",
+    "project_id": "onofflight-32bd7",
+    "storage_bucket": "onofflight-32bd7.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:846186588162:android:a13c0e2d0c3ed31e",
+        "android_client_info": {
+          "package_name": "masterung.androidthai.in.th.onofflight"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "846186588162-9lk0997tvhh85g3a46jge76sapr73v4d.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "masterung.androidthai.in.th.onofflight",
+            "certificate_hash": "99f1de59cbbb9f0ab27aeb63c596235bc843b92a"
+          }
+        },
+        {
+          "client_id": "846186588162-k44na6rivsbku14fbd3mkp2dum854q01.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC1T-YBm67U7HqNLh9VAQ-oth_zElEzdBk"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "846186588162-k44na6rivsbku14fbd3mkp2dum854q01.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
