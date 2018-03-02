@@ -54,7 +54,11 @@ public class ManualFragment extends Fragment{
 //        Light
         if (item.getItemId() == R.id.itemLight) {
 //            Do it
-
+            getActivity().getSupportFragmentManager()
+                    .beginTransaction()
+                    .replace(R.id.contentMainFragment, new LightFragment())
+                    .addToBackStack(null)
+                    .commit();
             return true;
         }
 
