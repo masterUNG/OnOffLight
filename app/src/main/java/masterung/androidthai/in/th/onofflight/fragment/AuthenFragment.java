@@ -1,6 +1,7 @@
 package masterung.androidthai.in.th.onofflight.fragment;
 
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -9,6 +10,11 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
+
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
 
 import masterung.androidthai.in.th.onofflight.R;
 
@@ -45,12 +51,38 @@ public class AuthenFragment extends Fragment{
                     Toast.makeText(getActivity(), "Please Fill All Blank", Toast.LENGTH_SHORT).show();
                 } else {
 //                    No Space
-
+                    checkAuthen(userString, passwordString);
                 }
 
             }
         });
     }
+
+    private void checkAuthen(String userString, String passwordString) {
+
+        FirebaseAuth firebaseAuth = FirebaseAuth.getInstance();
+        firebaseAuth.signInWithEmailAndPassword(userString, passwordString)
+                .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                    @Override
+                    public void onComplete(@NonNull Task<AuthResult> task) {
+
+                        if (task.isSuccessful()) {
+//                            Success Authen
+                            Toast.makeText(getActivity(), "Welcome to App",
+                                    Toast.LENGTH_SHORT).show();
+                            getActivity().getSupportFragmentManager().beginTransaction()
+                                    .replace(R.id.contentMainFragment, new MainFragment()).commit();
+                        } else {
+//                            UnSuccess Authen
+                            Toast.makeText(getActivity(), task.getException().getMessage(),
+                                    Toast.LENGTH_SHORT).show();
+                        }
+
+                    }
+                });
+
+
+    }   // checkAuthen
 
     @Nullable
     @Override
